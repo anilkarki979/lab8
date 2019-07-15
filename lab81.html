@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function validateForm() {
+  var name = document.forms["Form"]["name"].value; 
+  var add = document.forms["Form"]["add"].value; 
+  var tel = document.forms["Form"]["tel"].value;             
+    var mail = document.forms["Form"]["mail"].value; 
+    var con = document.forms["Form"]["con"].value;   
+    if (name == "")                                  
+    { 
+        window.alert("Please enter your name."); 
+        name.focus(); 
+        return false; 
+    } 
+   
+    if (add == "")                               
+    { 
+        window.alert("Please enter your address."); 
+        add.focus(); 
+        return false; 
+    } 
+
+    if (tel == "" || tel.length<10 || tel.length>10 || isNaN(tel))                           
+    { 
+        window.alert("Please enter your telephone number."); 
+        tel.focus(); 
+        return false; 
+    } 
+
+    if (mail == "") 
+    {
+    	window.alert("Please enter your mail."); 
+        mail.focus(); 
+        return false; 
+    }
+
+    if (con == "") 
+    {
+    	window.alert("Please enter the name of your country."); 
+        con.focus(); 
+        return false; 
+    }
+
+    return true;
+
+}
+</script>
+</head>
+<body>
+
+<form name="Form" action="/action_page.php" onsubmit="return validateForm()" method="post">
+  Name: <input type="text" name="name"><br>
+  Address: <input type="text" name="add"><br>
+  Telephone: <input type="text" name="tel"><br>
+  Gender: <input type="radio" name="gen" value="male" checked>Male
+  <input type="radio" name="gen" value="female"> Female
+  <input type="radio" name="gen" value="other"> Other<br>
+  Email: <input type="email" name="mail"><br>
+  Country: <input type="text" name="con"><br>
+  Comments: <textarea rows="2" cols="20" name="com"></textarea><br><br>
+  <input type="submit" value="Submit" name= "Sub">
+</form>
+
+</body>
+</html>

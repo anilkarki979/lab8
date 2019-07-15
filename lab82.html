@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function updateTime(){
+            var d = new Date();
+            var h = d.getHours(); 
+            var m = d.getMinutes(); 
+            var ampm = (h >= 12)?"PM":"AM" 
+            if (h > 12) h -= 12; 
+            if (h==0) h = 12; 
+            if (m < 10) m = "0" + m;
+            var t = h + ':' + m + ' ' + ampm;
+            window.status = t;
+            setTimeout('updateTime()', 20000);                         
+        }
+	</script>
+</head>
+<body onload="updateTime();">
+
+</body>
+</html>
